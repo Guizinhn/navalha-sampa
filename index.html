@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="img/navalha sampa sem fundo.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="img/navalha-sampa-sem-fundo.png"
+      type="image/x-icon"
+    />
+    <title>Navalha Sampa Barbearia</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- <div id="popup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 9999;">
+  <div style="position: relative; width: 150%; max-width: 400px; margin: 100px auto; background: #fff; top: 5rem; padding: 0; border-radius: 8px; overflow: hidden;">
+    <a href="pagina-leds/index.html">
+      <img src="img/Post para redes sociais moderno de bom dia para revenda de gás.png" alt="Promoção" style="width: 100%; display: block;" />
+    </a>
+    <button onclick="fecharPopup()" style="position: absolute; top: 10px; right: 10px; background:  #ffd700; color: white; border: none; font-size: 18px; border-radius: 50%; width: 30px; height: 30px;">X</button>
+  </div>
+</div> -->
+    <!-- <style>
+@media (max-width: 480px) {
+  #popup > div {
+    width: 90% !important;
+    margin: 80px auto !important;
+    top: 2rem !important;
+  }
+
+  #popup img {
+    height: auto !important;
+    object-fit: contain;
+  }
+
+  #popup button {
+    top: 5px !important;
+    right: 5px !important;
+    width: 25px !important;
+    height: 25px !important;
+    font-size: 16px !important;
+  }
+}
+</style> -->
+    <!-- <script>
+  window.onload = function () {
+    document.getElementById("popup").style.display = "block";
+  };
+
+  function fecharPopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+</script> -->
+
+    <header>
+      <img
+        class="logo"
+        src="img/navalha sampa sem fundo.png"
+        alt="Logo do Navalha Sampa"
+      />
+    </header>
+
+    <section class="hero">
+      <video src="img/0601.mp4" autoplay loop muted></video>
+      <div class="blocodepalavras">
+        <h2>Qualidade e preço bom <span class="destaque">é Aqui.</span></h2>
+        <p>O mais barato da região</p>
+        <a href="https://www.trinks.com/navalha-sampa-barbearia">
+          <button
+            class="botao"
+            onclick="window.location.href='agendamento.html'"
+          >
+            Agende seu horário
+          </button>
+        </a>
+      </div>
+    </section>
+
+    <section class="sobre">
+      <h2>Quem Somos</h2>
+      <div class="botoes-sobre">
+        <button class="botao" onclick="mostrarTexto('cliente')">
+          Sou Cliente
+        </button>
+        <button class="botao" onclick="mostrarTexto('barbeiro')">
+          Sou Barbeiro
+        </button>
+      </div>
+      <img src="img/foto pai.jpg" alt="Foto de Jair Badia" class="foto-jair" />
+      <div class="sobre-conteudo">
+        <p id="texto-sobre">
+          Conheça a historia da <span class="destaque">Navalha Sampa</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="servicos">
+      <h2>Serviços</h2>
+
+      <div class="categoria-servico">
+        <h3>Barbearia</h3>
+        <ul class="lista-servicos">
+          <li>Corte - R$ 35</li>
+          <li>Barba Tradicional - R$ 35</li>
+          <li>Combo, Cabelo mais barboterapia - R$ 75</li>
+          <li>Combo, Cabelo mais barba tradicional - R$ 65</li>
+          <li>Barbo Terapia - R$ 45</li>
+          <li>Pezinho da barba - R$ 20</li>
+          <li>Limpadinha - R$ 10</li>
+          <li>Camuflage so perfil - R$ 15</li>
+          <li>Camuflage cabeça toda - R$ 25</li>
+          <li>Pezinho - R$ 15</li>
+          <li>Sobrancelha - R$ 15</li>
+          <li>Limpeza de orelha + Nariz - R$ 35</li>
+          <li>Luzes mechas - R$ 90</li>
+          <li>Platinado - R$ 130</li>
+          <li>Celagem - R$ 80</li>
+          <li>Relaxamento - R$ 45</li>
+          <li>Hidratação - R$ 25</li>
+        </ul>
+      </div>
+      <section class="produtos">
+        <div class="container">
+          <h2>Nossos Produtos</h2>
+          <div class="galeria-produtos">
+            <div class="produto">
+              <img src="img/fox pomada seca .jpg" alt="Produto 1" />
+            </div>
+            <div class="produto">
+              <img src="img/fox pomada 2.jpg" alt="Produto 2" />
+            </div>
+            <div class="produto">
+              <img src="img/fox pomada 3.jpg" alt="Produto 3" />
+            </div>
+            <!-- adicione mais produtos se quiser -->
+          </div>
+        </div>
+      </section>
+
+      <section class="livro-section">
+        <h2>Venha conhecer nossa família</h2>
+        <div
+          class="livro-container"
+          ontouchstart="touchStart(event)"
+          ontouchmove="touchMove(event)"
+          ontouchend="touchEnd()"
+        >
+          <button class="livro-btn left" onclick="voltarPagina()">
+            &#8592;
+          </button>
+
+          <div class="nossaEquipe" id="livroImagens">
+            <img src="img/imagem navaha sampa.jpg" alt="Foto fachada" />
+          </div>
+
+          <button class="livro-btn right" onclick="avancarPagina()">
+            &#8594;
+          </button>
+        </div>
+
+        <!--  <section id="servicos">
+    <div class="categoria-servico">
+      <h3>Coloração e Química</h3>
+      <p class="observacao">
+        Valores sob consulta. Os valores podem variar de acordo com o tamanho e volume do cabelo.
+      </p>
+      <ul class="lista-servicos">
+        <li>Coloração</li>
+        <li>Reflexo/Luzes</li>
+        <li>Tonalizante</li>
+        <li>Descoloração</li>
+        <li>Mecha (uma)</li>
+        <li>Platinado</li>
+        <li>Aplicação de Produtos</li>
+        <li>Alinhamento de Fios</li>
+        <li>Alinhamento Capilar</li>
+        <li>Escova Orgânica</li>
+        <li>Progressiva</li>
+      </ul>
+    </div> -->
+
+        <!--  <div class="categoria-servico">
+      <h3>Tratamentos</h3>
+      <p class="observacao">
+        Valores sob consulta. Os valores podem variar de acordo com o tamanho e volume do cabelo.
+      </p>
+      <ul class="lista-servicos">
+        <li>Reconstrução Capilar</li>
+        <li>Penteado</li>
+        <li>Escova</li>
+      </ul>
+    </div>
+    </section> -->
+
+        <div style="text-align: center; margin-top: 20px">
+          <a href="https://www.trinks.com/navalha-sampa-barbearia">
+            <button class="botao">Agende Seu Horário</button>
+          </a>
+        </div>
+      </section>
+    </section>
+
+    <section class="localizacao">
+      <h2>Onde nos encontrar</h2>
+      <p>Estamos localizados na Bento Freitas, 196, São Paulo.</p>
+      <div class="mapa-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.040930569313!2d-46.63534268498091!3d-23.553228667529996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59ba69c67d2d%3A0xb7425e27e7df0d20!2sBento%20Freitas%2C%20196%20-%20Liberdade%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001150-000!5e0!3m2!1spt-BR!2sbr!4v1692238165439!5m2!1spt-BR!2sbr"
+          width="100%"
+          height="400"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- Seção de Redes Sociais -->
+    <section class="redes-sociais">
+      <h2>Nossas Redes</h2>
+      <p>
+        Siga a gente no Instagram:
+        <a
+          href="https://www.instagram.com/navalhasampabarbearia?igsh=MW5zNno5aW02azNsYw%3D%3D&utm_source=qr"
+          target="_blank"
+          class="link-social"
+          >@navalhasampabarbearia</a
+        >
+      </p>
+    </section>
+
+    <footer>
+      <section class="avaliacao">
+        <!-- ESTRELAS DE “FAZ-DE-CONTA” -->
+        <div class="avaliacao__estrelas">★ ★ ★ ★ ★</div>
+
+        <h2>Gostou do nosso atendimento?</h2>
+        <p>
+          Deixe sua avaliação no Google e ajude outras pessoas a nos conhecerem!
+        </p>
+        <a
+          href="https://www.google.com/search?q=navalha+sampa+barbearia&ie=UTF-8"
+          target="_blank"
+        >
+          <button class="botao">Avalie no Google</button>
+        </a>
+      </section>
+
+      <p>© 2025 Navalha Sampa Barbearia. Todos os direitos reservados.</p>
+      <a href="https://www.trinks.com/navalha-sampa-barbearia">
+        <button class="botao">Agende seu horário</button>
+      </a>
+    </footer>
+
+    <a
+      class="whatsapp-fixo"
+      href="https://linktr.ee/navalhasampabarbearia"
+      target="_blank"
+    >
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+        alt="WhatsApp"
+      />
+    </a>
+
+    <a class="botao-time" href="https://wa.me/5511977518335" target="_blank">
+      Venha fazer parte do nosso time
+    </a>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

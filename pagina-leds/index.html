@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro de Lead - Navalha Sampa</title>
+  <link rel="stylesheet" href="formulario.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Cadastre-se para receber novidades</h1>
+    <form id="leadForm">
+      <input type="text" id="nome" placeholder="Seu nome" required />
+      <input type="email" id="email" placeholder="Seu e-mail" required />
+      <input type="tel" id="telefone" placeholder="Seu telefone" required />
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="mensagem"></p>
+  </div>
+  <div class="butao">
+    <a href="../index.html"><button>
+      Voltar
+    </button></a>
+  </div>
+
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <script>
+   
+    const firebaseConfig = {
+      apiKey: "AIzaSyAEiPiwJ17vnTMUAksd_p9Ou_CaTAsxYGw",
+      authDomain: "navalha-sampa-barbearia-41ae0.firebaseapp.com",
+      projectId: "navalha-sampa-barbearia-41ae0",
+      storageBucket: "navalha-sampa-barbearia-41ae0.appspot.com",
+      messagingSenderId: "200059922021",
+      appId: "1:200059922021:web:c4b1633e8c0e1a9fff488c",
+      measurementId: "G-4BH3FZB44"
+    };
+
+    
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+   
+    document.getElementById("leadForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const telefone = document.getElementById("telefone").value;
+
+      try {
+        await db.collection("leads").add({ nome, email, telefone, data: new Date() });
+        document.getElementById("mensagem").innerText = " cadastrado efetuado com sucesso!";
+        document.getElementById("leadForm").reset();
+      } catch (error) {
+        console.error("Erro ao cadastrar lead:", error);
+        document.getElementById("mensagem").innerText = "Erro de cadastro tente novamente.";
+      }
+    });
+  </script>
+  <style>
+    /* Reset básico */
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo da página */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #000000, #333333);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Container do formulário */
+.container {
+  background-color: #1c1c1c;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Título */
+.container h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #f0c040;
+}
+
+/* Campos do formulário */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  background-color: #2c2c2c;
+  color: #fff;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+input:focus {
+  outline: none;
+  background-color: #3a3a3a;
+}
+
+/* Botão Enviar */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background-color: #f0c040;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #e6b633;
+}
+
+/* Mensagem de retorno */
+#mensagem {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #00ff99;
+}
+
+/* Botão "Voltar" */
+.butao {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.butao a button {
+  background-color: #f0c040;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.butao a button:hover {
+  background-color: #e6b633;
+}
+
+/* Responsivo para tablets e celulares */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  .butao {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .butao a button {
+    width: 80%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 25px 15px;
+    width: 100%;
+    max-width: 90%;
+  }
+
+  input, button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  #mensagem {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+}
+
+
+
+
+
+  </style>
+</body>
+</html>
