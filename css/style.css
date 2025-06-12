@@ -125,12 +125,6 @@ section p {
   line-height: 2.2;
   padding: 20px;
 }
-.hero video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none; /* impede interação com o vídeo */
-}
 
 .item {
   display: flex;
