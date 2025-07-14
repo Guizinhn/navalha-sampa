@@ -17,6 +17,18 @@
 
       gtag("config", "AW-17096768709");
     </script>
+    <script>
+      document
+        .querySelectorAll("a[href*='wa.me'], a[href*='api.whatsapp.com']")
+        .forEach(function (el) {
+          el.addEventListener("click", function () {
+            gtag("event", "conversion", {
+              send_to: "AW-17096768709/abcDEFghiJKLmnopQ",
+            });
+          });
+        });
+    </script>
+
     <link
       rel="shortcut icon"
       href="img/imagem navaha sampa.jpg"
