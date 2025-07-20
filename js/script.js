@@ -183,3 +183,34 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+  
+  const countdownDate = new Date().getTime() + 2 * 24 * 60 * 60 * 1000; // 2 dias
+
+  const timer = document.getElementById('timer');
+
+  const updateTimer = () => {
+    const now = new Date().getTime();
+    const diff = countdownDate - now;
+
+    if (diff <= 0) {
+      timer.innerHTML = "⚠ Promoção encerrada!";
+      timer.style.backgroundColor = "#d40000";
+      timer.style.color = "#fff";
+    } else {
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      timer.innerHTML =
+        (days > 0 ? days + "d " : "") +
+        hours + "h " +
+        minutes + "m " +
+        seconds + "s";
+    }
+  };
+
+  setInterval(updateTimer, 1000);
+  updateTimer();
+
+
